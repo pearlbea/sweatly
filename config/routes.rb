@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
 
-
+  resources :users
   resources :exercises
 
   # Example of regular route:
