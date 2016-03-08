@@ -3,13 +3,13 @@ require 'test_helper'
 class UserTest < ActiveSupport::TestCase
 
 	def setup
-		@user = User.new(name: "Example User", 
+		@user = User.new(name: "Example User",
 			email: "user@example.com",
 			password: "foobar",
 			password_confirmation: "foobar")
 	end
 
-	test "should be valid" do 
+	test "should be valid" do
 		assert @user.valid?
 	end
 
@@ -33,7 +33,7 @@ class UserTest < ActiveSupport::TestCase
 		assert_not @user.valid?
 	end
 
-	test "email should be unique" do 
+	test "email should be unique" do
     	duplicate_user = @user.dup
     	duplicate_user.email = @user.email.upcase
     	@user.save
@@ -48,6 +48,11 @@ class UserTest < ActiveSupport::TestCase
     test "password should have at least 6 characters" do
     	@user.password = @user.password_confirmation = "a" * 5
     	assert_not @user.valid?
-	end
+    end
+
+    test "authenticated? should return false for a user with nil digest" do
+      assert_not @user.authenticated?('')
+    end
+
 
 end
