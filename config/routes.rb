@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
 
   resources :users
+  resources :account_activations, only: [:edit]
   resources :exercises
 
   # Example of regular route:
