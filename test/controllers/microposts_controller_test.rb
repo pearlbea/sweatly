@@ -25,5 +25,6 @@ class MicropostsControllerTest < ActionController::TestCase
     assert_no_difference 'Micropost.count' do
       delete :destroy, id: micropost
     end
+    assert_redirected_to root_url
   end
 end
