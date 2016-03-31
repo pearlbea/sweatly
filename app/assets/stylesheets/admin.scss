@@ -10,6 +10,16 @@
 
   li {
     display: inline-block;
+  }
+
+  a {
+    display: block;
     padding: 1rem;
+    background: white;
+    color: orange;
+    &.active {
+      color: white;
+      background: orange;
+    }
   }
 }

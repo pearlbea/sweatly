@@ -1,6 +1,8 @@
 class Exercise < ActiveRecord::Base
   has_many :taggings
   has_many :tags, through: :taggings
+  has_many :memberships
+  has_many :workouts, through: :memberships
 
   def self.tagged_with(tag)
     Tag.find_by_tag!(tag).exercises

@@ -7,7 +7,6 @@ class Admin::ExercisesController < ApplicationController
 
   def new
     @exercise = Exercise.new
-    @tags = Tag.all
   end
 
   def create
@@ -21,6 +20,7 @@ class Admin::ExercisesController < ApplicationController
 
   def edit
     @exercise = Exercise.find(params[:id])
+    @workouts = @exercise.workouts
   end
 
   def update

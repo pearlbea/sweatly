@@ -11,10 +11,6 @@
 
       <%= f.text_field :all_tags %>
 
-        <%= f.fields_for :exercises_tags do |tag| %>
-          <%= collection_check_boxes(:exercises_tags, :tag_id, Tag.all, :id, :tag)%>
-        <% end %>
-
     </div>
     <% end %>
   </div>

@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   get 'users/new'
 
-  root                'static_pages#home'
+  root                'sessions#new'
   get 'help'      =>  'static_pages#help'
   get 'about'     =>  'static_pages#about'
   get 'admin'     =>  'static_pages#admin'
@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   delete 'logout' =>  'sessions#destroy'
 
   namespace :admin do
-    resources :exercises, :tags
+    resources :exercises, :tags, :workouts
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -2,7 +2,58 @@
 @import "bootstrap";
 
 /* universal */
+@font-face {
+  font-family: 'icomoon';
+  src:url('../fonts/icomoon.eot?-mrxtxm');
+  src:url('../fonts/icomoon.eot?#iefix-mrxtxm') format('embedded-opentype'),
+  url('../fonts/icomoon.ttf?-mrxtxm') format('truetype'),
+  url('../fonts/icomoon.woff?-mrxtxm') format('woff'),
+  url('../fonts/icomoon.svg?-mrxtxm#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
 
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-arrow:before {
+  content: "\e600";
+}
+.icon-more_icon:before {
+  content: "\e601";
+}
+.icon-profile_icon:before {
+  content: "\e602";
+}
+.icon-time_icon-01:before {
+  content: "\e603";
+}
+.icon-workouts_icon:before {
+  content: "\e604";
+}
+
+.logo {
+  display: inline-block;
+  list-style-type: none;
+  padding: none;
+  margin: none;
+  width: 50%;
+  li {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
 section {
   overflow: auto;
 }

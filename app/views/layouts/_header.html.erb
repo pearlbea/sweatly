@@ -1,8 +1,15 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
+<header class="navbar-inverse">
   <div class="container">
     <nav>
+
+      <ul class="logo">
+        <li><%= image_tag("vanessa-02.png", width:"150") %></li>
+        <li><%= image_tag("Vanessa-type-beta.png", width:"100") %></li>
+      </ul>
+
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Home", root_path %></li>
+
+        <li><%= link_to '<i class="icon-profile_icon"></i>'.html_safe, root_path %></li>
         <li><%= link_to "Help", help_path %></li>
         <% if logged_in? %>
           <li><%= link_to "Users", users_path %></li>

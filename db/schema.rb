@@ -11,13 +11,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160331141604) do
+ActiveRecord::Schema.define(version: 20160331183427) do
+
+  create_table "assignments", force: :cascade do |t|
+    t.integer  "workout_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "assignments", ["user_id"], name: "index_assignments_on_user_id"
+  add_index "assignments", ["workout_id"], name: "index_assignments_on_workout_id"
 
   create_table "exercises", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "memberships", force: :cascade do |t|
+    t.integer  "workout_id"
+    t.integer  "exercise_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "memberships", ["exercise_id"], name: "index_memberships_on_exercise_id"
+  add_index "memberships", ["workout_id"], name: "index_memberships_on_workout_id"
 
   create_table "microposts", force: :cascade do |t|
     t.text     "content"
@@ -78,6 +98,7 @@ ActiveRecord::Schema.define(version: 20160331141604) do
     t.integer  "level"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "name"
   end
 
 end

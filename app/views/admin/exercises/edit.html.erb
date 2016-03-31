@@ -1,15 +1,13 @@
-<h1>Edit Article</h1>
+<h1>Edit Exercise</h1>
 
 <%= form_for [:admin, @exercise], method: 'patch', url: admin_exercise_path do |f| %>
   <%= f.text_field :name, class: "form-control" %>
-  <%= f.submit "Save", class: "btn btn-primary" %>
   <div>
-
-  <%= f.text_field :all_tags %>
-
-    <%= f.fields_for :exercises_tags do |tag| %>
-      <%= collection_check_boxes(:exercises_tags, :tag_id, Tag.all, :id, :tag)%>
-    <% end %>
-
-</div>
+    <%= f.text_field :all_tags %>
+    <%= f.submit "Save", class: "btn btn-primary" %>
+  </div>
 <% end %>
+
+<ul>
+  <%= render @workouts %>
+</ul>
