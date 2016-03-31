@@ -1,3 +1,97 @@
-// Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'mixins';
+
+.login {
+  background-size: cover;
+  background: url('background.jpg') top center no-repeat;
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+
+  .wrapper {
+    width: 375px;
+    margin: 0 auto;
+  }
+
+  .title {
+    background: url('Vanessa-type-beta.png') no-repeat;
+    width: 215px;
+    height: 70px;
+    margin: 2rem auto 0 auto;
+
+    @include small {
+      background: url('Vanessa_logo_beta_mobile.png') no-repeat;
+      height: 200px;
+      width: 218px;
+      background-size: cover;
+    }
+  }
+
+  .photo {
+    width: 215px;
+    height: 145px;
+    margin: 0 auto;
+    @include small {
+      display: none;
+    }
+  }
+}
+  .cta{
+    color: $green;
+    font-size: 1.75rem;
+    line-height: 2rem;
+    width: 80%;
+    text-align: center;
+    margin: 1rem auto 1rem auto;
+
+  }
+
+  form {
+    margin: 0 auto;
+  }
+
+  form p {
+    margin: 1rem auto;
+  }
+
+  .loginLabel {
+    display: block;
+    font-size: .7rem;
+    letter-spacing: .03rem;
+    color: #999;
+    text-align: left;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .inputLevel, .inputEmail {
+    width: 90%;
+    height: 25px;
+    margin-top: 3px;
+    font-size: 1.25rem;
+    color: #939393;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+  }
+
+  .secondfield {
+    margin-top: -7px;
+  }
+
+
+  .button{
+    width: 92%;
+    transition: background,1s;
+    font-family: 'Open Sans', sans-serif;
+    background: #598527;
+    border: none;
+    border-radius: 50px;
+    color: #fff;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    width: 220px;
+    padding: .5rem 1rem;
+    font-size: 1.6rem;
+    font-weight: 300;
+    margin: 0 auto;
+  }

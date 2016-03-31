@@ -1,0 +1,12 @@
+<html>
+  <head>
+    <title><%= tab_title(yield(:title)) %></title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  </head>
+  <body>
+    <div class="admin">
+      <%= render 'layouts/admin_header' %>
+      <%= yield %>
+    </div>
+  </body>
+</html>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160314135550) do
+ActiveRecord::Schema.define(version: 20160331141604) do
 
   create_table "exercises", force: :cascade do |t|
     t.string   "name"
@@ -41,6 +41,22 @@ ActiveRecord::Schema.define(version: 20160314135550) do
   add_index "relationships", ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
   add_index "relationships", ["follower_id"], name: "index_relationships_on_follower_id"
 
+  create_table "taggings", force: :cascade do |t|
+    t.integer  "tag_id"
+    t.integer  "exercise_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "taggings", ["exercise_id"], name: "index_taggings_on_exercise_id"
+  add_index "taggings", ["tag_id"], name: "index_taggings_on_tag_id"
+
+  create_table "tags", force: :cascade do |t|
+    t.string   "tag"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
@@ -57,5 +73,11 @@ ActiveRecord::Schema.define(version: 20160314135550) do
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
+
+  create_table "workouts", force: :cascade do |t|
+    t.integer  "level"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end

@@ -8,13 +8,18 @@ Rails.application.routes.draw do
 
   get 'users/new'
 
-  root              'static_pages#home'
-  get 'help'    =>  'static_pages#help'
-  get 'about'   =>  'static_pages#about'
-  get 'signup'  =>  'users#new'
-  get 'login'   =>  'sessions#new'
-  post 'login'  =>  'sessions#create'
-  delete 'logout' => 'sessions#destroy'
+  root                'static_pages#home'
+  get 'help'      =>  'static_pages#help'
+  get 'about'     =>  'static_pages#about'
+  get 'admin'     =>  'static_pages#admin'
+  get 'signup'    =>  'users#new'
+  get 'login'     =>  'sessions#new'
+  post 'login'    =>  'sessions#create'
+  delete 'logout' =>  'sessions#destroy'
+
+  namespace :admin do
+    resources :exercises, :tags
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -29,7 +34,7 @@ Rails.application.routes.draw do
   resources :account_activations, only: [:edit]
   resources :password_resets, only: [:new, :create, :edit, :update]
   resources :microposts, only: [:create, :destroy]
-  resources :exercises
+  resources :relationships, only: [:create, :destroy]
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

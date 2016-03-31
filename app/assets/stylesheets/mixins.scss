@@ -1,0 +1,75 @@
+$green: #598527;
+$darkgreen: #476a1f;
+$darkestgreen: #314819;
+
+$aqua: #115b68;
+$darkaqua: #1C3539;
+
+$violet: #78189c;
+$darkviolet: #301639;
+
+$rust: #a0410d;
+$darkrust: #4A2417;
+
+$grey:  #404040;
+$lightergrey: #999999;
+$lightgrey: #666666;
+$darkgrey: #202020;
+
+$small: 480px;
+$medium: 840px;
+$full: 960px;
+$large: 1280px;
+
+@mixin small{
+  @media(max-width: #{$small - 1px}){
+    @content;
+  }
+}
+@mixin medium{
+  @media (min-width: #{$small}) and (max-width: #{$medium - 1px}) {
+    @content;
+  }
+}
+@mixin full{
+  @media (min-width: #{$medium}) and (max-width: #{$full - 1px}) {
+    @content;
+  }
+}
+@mixin large{
+  @media (min-width: #{$full}) {
+    @content;
+  }
+}
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie);
+}
+
+@mixin clearfix {
+  *zoom: 1;
+  &:before, &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
